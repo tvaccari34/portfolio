@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\Home\HomeSliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +34,11 @@ Route::controller(AdminController::class)->group(function() {
 
 });
 
+//Home Slide All Routes
+Route::controller(HomeSliderController::class)->group(function() {
+    Route::get('/home/slide', 'HomeSlider')->name('home.slide');
+    Route::post('/update/slider', 'updateSlider')->name('update.slider');
+
+});
 
 require __DIR__.'/auth.php';
