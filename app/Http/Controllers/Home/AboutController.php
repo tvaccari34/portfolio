@@ -79,7 +79,7 @@ class AboutController extends Controller
 
             Image::make($image)->resize(220, 220)->save('upload/multi/'.$name_gen);
 
-            $save_url = 'upload/about_page/'.$name_gen;
+            $save_url = 'upload/multi/'.$name_gen;
 
             MultiImage::insert([
                 'multi_image' => $save_url,
@@ -87,12 +87,17 @@ class AboutController extends Controller
             ]);
 
         }
-        
+
         $notification = array(
             'message' => 'Multi Images stored successfully',
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
+    }
+
+    public function AllMultiImage(){
+        $allMultiImage = MultiImage::all();
+        return view('admin.about_page.all_multiimage', compact('allMultiImage'));
     }
 
 }
