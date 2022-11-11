@@ -136,6 +136,10 @@
 
         <!-- Datatable init js -->
         <script src="{{ asset('backend/assets/js/pages/datatables.init.js')}}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+        <script src="{{ asset('backend/assets/js/code.js') }}"></script>
     </body>
 
 </html>
