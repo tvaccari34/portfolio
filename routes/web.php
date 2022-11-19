@@ -5,6 +5,7 @@ use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
+use App\Http\Controllers\Home\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,6 +84,18 @@ Route::controller(BlogCategoryController::class)->group(function() {
 
     Route::post('/store/blog/category', 'StoreBlogCategory')->name('story.blog.category');
     Route::post('/update/blog/category', 'UpdateBlogCategory')->name('update.blog.category');
+
+});
+
+//Blog All Routes
+Route::controller(BlogController::class)->group(function() {
+    Route::get('/all/blog', 'AllBlog')->name('all.blog');
+    Route::get('/add/blog', 'AddBlog')->name('add.blog');
+    Route::get('/edit/blog/{id}', 'EditBlog')->name('edit.blog');
+    Route::get('/delete/blog/{id}', 'DeleteBlog')->name('delete.blog');
+
+    Route::post('/store/blog', 'StoreBlog')->name('story.blog');
+    Route::post('/update/blog', 'UpdateBlog')->name('update.blog');
 
 });
 

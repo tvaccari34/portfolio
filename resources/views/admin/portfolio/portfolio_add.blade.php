@@ -40,7 +40,7 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Slide Image</label>
                                 <div class="col-sm-10">
-                                    <input name="portfolio_image" class="form-control" type="file" placeholder="" id="portfolio_image">
+                                    <input name="portfolio_image" class="form-control" type="file" placeholder="" id="image">
                                     @error('portfolio_image')
                                         <span class='text-danger'>{{ $message }}</span>
                                     @enderror
