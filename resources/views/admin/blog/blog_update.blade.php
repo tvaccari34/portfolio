@@ -15,10 +15,12 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Add Blog Page</h4>
+                        <h4 class="card-title">Update Blog Page</h4>
 
-                        <form method="post" action="{{ route('store.blog') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('update.blog') }}" enctype="multipart/form-data">
                             @csrf
+
+                            <input type="hidden" name="id" value="{{ $blog->id }}">
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Blog Category:</label>
@@ -26,7 +28,7 @@
                                     <select name="blog_category_id" class="form-select" aria-label="Default select example">
                                         <option selected="">Open this select menu</option>
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->blog_category }}</option>
+                                            <option value="{{ $category->id }}" {{ $category->id == $blog->blog_category_id ? 'selected' : '' }}>{{ $category->blog_category }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -34,7 +36,7 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Blog Title:</label>
                                 <div class="col-sm-10">
-                                    <input name="blog_title" class="form-control" type="text" placeholder="Blog Title" id="blog_title">
+                                    <input name="blog_title" class="form-control" type="text" placeholder="Blog Title" id="blog_title" value="{{ $blog->blog_title }}">
                                     @error('blog_title')
                                         <span class='text-danger'>{{ $message }}</span>
                                     @enderror
@@ -44,28 +46,31 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Blog Tags:</label>
                                 <div class="col-sm-10">
                                     <input name="blog_tags" class="form-control" placeholder="Blog Tags"
-                                     type="text" data-role="tagsinput">
+                                     type="text" data-role="tagsinput" value="{{ $blog->blog_tags }}">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Blog Description:</label>
                                 <div class="col-sm-10">
-                                    <textarea id="elm1" name="blog_description"></textarea>
+                                    <textarea id="elm1" name="blog_description">
+                                        {{ $blog->blog_description }}
+                                    </textarea>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Blog Image</label>
                                 <div class="col-sm-10">
-                                    <input name="blog_image" class="form-control" type="file" placeholder="" id="image">
+                                    <input name="blog_image" class="form-control" type="file" placeholder="" id="image" src="{{
+                                        asset($blog->blog_image) }}">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <img id="showImage" class="rounded avatar-lg" src="{{ url('upload/no_image.jpg') }}" alt="Blog Image Page">
+                                    <img id="showImage" class="rounded avatar-lg" src="{{asset($blog->blog_image) }}" alt="Blog Image Page">
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-info btn-rounded waves-effect waves-light" value="Add Blog Data">
+                            <input type="submit" class="btn btn-info btn-rounded waves-effect waves-light" value="Update Blog Data">
                         </form>
                         <!-- end row -->
                     </div>
