@@ -210,10 +210,10 @@
                                 @foreach ($allBlogs as $blogItem)
                                     <li class="rc__post__item">
                                         <div class="rc__post__thumb">
-                                            <a href="blog-details.html"><img src="{{asset($blogItem->blog_image)}}" alt=""></a>
+                                            <a href="{{route('blog.details', $blogItem->id)}}"><img src="{{asset($blogItem->blog_image)}}" alt=""></a>
                                         </div>
                                         <div class="rc__post__content">
-                                            <h5 class="title"><a href="blog-details.html">{{$blogItem->blog_title}}</a></h5>
+                                            <h5 class="title"><a href="{{route('blog.details', $blogItem->id)}}">{{$blogItem->blog_title}}</a></h5>
                                             <span class="post-date"><i class="fal fa-calendar-alt"></i>{{ Carbon\Carbon::parse($blogItem->created_at)->diffForHumans() }}</span>
                                         </div>
                                     </li>
@@ -224,7 +224,7 @@
                             <h4 class="widget-title">Categories</h4>
                             <ul class="sidebar__cat">
                                 @foreach ($blogCategories as $blogCategoryItem)
-                                    <li class="sidebar__cat__item"><a href="blog.html">{{$blogCategoryItem->blog_category}}</a></li>
+                                    <li class="sidebar__cat__item"><a href="{{route('category.blog', $blogCategoryItem->id)}}">{{$blogCategoryItem->blog_category}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
