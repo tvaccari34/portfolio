@@ -146,4 +146,10 @@ class BlogController extends Controller
 
         return view('frontend.category_blogs', compact('blogPost', 'allBlogs', 'blogCategories', 'categoryName'));
     }
+
+    public function HomeBlog(){
+        $allBlogs = Blog::latest()->get();
+        $blogCategories = BlogCategory::latest()->get();
+        return view('frontend.blog', compact('allBlogs', 'blogCategories'));
+    }
 }
