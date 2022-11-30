@@ -6,6 +6,7 @@ use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
+use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Home\FooterController;
 
 /*
@@ -109,6 +110,15 @@ Route::controller(BlogController::class)->group(function() {
 Route::controller(FooterController::class)->group(function() {
     Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
     Route::post('/footer/update', 'FooterUpdate')->name('footer.update');
+});
+
+//Contact All Routes
+Route::controller(ContactController::class)->group(function() {
+    Route::get('/contact', 'Contact')->name('contact.me');
+    Route::get('/contact/message', 'ContactMessage')->name('contact.message');
+    Route::get('/view/message/{id}', 'GetMessage')->name('view.contact_message');
+
+    Route::post('/story/contact_message', 'StoreContactMessage')->name('story.contact_message');
 });
 
 require __DIR__.'/auth.php';
