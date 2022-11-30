@@ -38,19 +38,19 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Address:</label>
                                 <div class="col-sm-10">
-                                    <input name="footer_address" class="form-control" type="text" placeholder="Country" value="{{ $footer->footer_address }}" id="footer_address">
+                                    <input name="footer_address" class="form-control" type="text" placeholder="Address" value="{{ $footer->footer_address }}" id="footer_address">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Email:</label>
                                 <div class="col-sm-10">
-                                    <input name="footer_email" class="form-control" type="text" placeholder="Country" value="{{ $footer->footer_email }}" id="footer_email">
+                                    <input name="footer_email" class="form-control" type="text" placeholder="Email" value="{{ $footer->footer_email }}" id="footer_email">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Social Title:</label>
                                 <div class="col-sm-10">
-                                    <input name="footer_social_title" class="form-control" type="text" placeholder="Country" value="{{ $footer->footer_social_title }}" id="footer_social_title">
+                                    <input name="footer_social_title" class="form-control" type="text" placeholder="Social Title" value="{{ $footer->footer_social_title }}" id="footer_social_title">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -62,33 +62,39 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Copyrights:</label>
+                                <div class="col-sm-10">
+                                    <input name="footer_copyright" class="form-control" type="text" placeholder="Copyrights" value="{{ $footer->footer_copyright }}" id="footer_copyright">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Facebook Link:</label>
                                 <div class="col-sm-10">
-                                    <input name="footer_social_facebook" class="form-control" type="text" placeholder="Country" value="{{ $footer->footer_social_facebook }}" id="footer_social_facebook">
+                                    <input name="footer_social_facebook" class="form-control" type="text" placeholder="Facebook Link" value="{{ $footer->footer_social_facebook }}" id="footer_social_facebook">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Twitter Link:</label>
                                 <div class="col-sm-10">
-                                    <input name="footer_social_twitter" class="form-control" type="text" placeholder="Country" value="{{ $footer->footer_social_twitter }}" id="footer_social_twitter">
+                                    <input name="footer_social_twitter" class="form-control" type="text" placeholder="Twitter Link" value="{{ $footer->footer_social_twitter }}" id="footer_social_twitter">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Behance Link:</label>
                                 <div class="col-sm-10">
-                                    <input name="footer_social_behance" class="form-control" type="text" placeholder="Country" value="{{ $footer->footer_social_behance }}" id="footer_social_behance">
+                                    <input name="footer_social_behance" class="form-control" type="text" placeholder="Behance Link" value="{{ $footer->footer_social_behance }}" id="footer_social_behance">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">LinkedIn Link:</label>
                                 <div class="col-sm-10">
-                                    <input name="footer_social_linkedin" class="form-control" type="text" placeholder="Country" value="{{ $footer->footer_social_linkedin }}" id="footer_social_linkedin">
+                                    <input name="footer_social_linkedin" class="form-control" type="text" placeholder="LinkedIn Link" value="{{ $footer->footer_social_linkedin }}" id="footer_social_linkedin">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Instagram Link:</label>
                                 <div class="col-sm-10">
-                                    <input name="footer_social_instagram" class="form-control" type="text" placeholder="Country" value="{{ $footer->footer_social_instagram }}" id="footer_social_instagram">
+                                    <input name="footer_social_instagram" class="form-control" type="text" placeholder="Instagram Link" value="{{ $footer->footer_social_instagram }}" id="footer_social_instagram">
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-info btn-rounded waves-effect waves-light" value="Update Footer">

@@ -1,3 +1,8 @@
+@php
+    $footer = App\Models\Footer::first();
+
+@endphp
+
 <!-- Footer-area -->
 <footer class="footer">
     <div class="container">
@@ -6,12 +11,10 @@
                 <div class="footer__widget">
                     <div class="fw-title">
                         <h5 class="sub-title">Contact us</h5>
-                        <h4 class="title">+81383 766 284</h4>
+                        <h4 class="title">{{$footer->footer_phone_number}}</h4>
                     </div>
                     <div class="footer__widget__text">
-                        <p>There are many variations of passages of lorem ipsum
-                        available but the majority have suffered alteration
-                        in some form is also here.</p>
+                        <p>{{$footer->footer_short_description}}</p>
                     </div>
                 </div>
             </div>
@@ -19,11 +22,11 @@
                 <div class="footer__widget">
                     <div class="fw-title">
                         <h5 class="sub-title">my address</h5>
-                        <h4 class="title">AUSTRALIA</h4>
+                        <h4 class="title">{{$footer->footer_country}}</h4>
                     </div>
                     <div class="footer__widget__address">
-                        <p>Level 13, 2 Elizabeth Steereyt set <br> Melbourne, Victoria 3000</p>
-                        <a href="mailto:noreply@envato.com" class="mail">noreply@envato.com</a>
+                        <p>{{$footer->footer_address}}</p>
+                        <a href="mailto:{{$footer->footer_email}}" class="mail">{{$footer->footer_email}}</a>
                     </div>
                 </div>
             </div>
@@ -31,16 +34,26 @@
                 <div class="footer__widget">
                     <div class="fw-title">
                         <h5 class="sub-title">Follow me</h5>
-                        <h4 class="title">socially connect</h4>
+                        <h4 class="title">{{$footer->footer_social_title}}</h4>
                     </div>
                     <div class="footer__widget__social">
-                        <p>Lorem ipsum dolor sit amet enim. <br> Etiam ullamcorper.</p>
+                        <p>{{$footer->footer_social_description}}</p>
                         <ul class="footer__social__list">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            @if ($footer->footer_social_facebook)
+                                <li><a href="{{$footer->footer_social_facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                            @endif
+                            @if ($footer->footer_social_twitter)
+                                <li><a href="{{$footer->footer_social_twitter}}"><i class="fab fa-twitter"></i></a></li>
+                            @endif
+                            @if ($footer->footer_social_behance)
+                                <li><a href="{{$footer->footer_social_behance}}"><i class="fab fa-behance"></i></a></li>
+                            @endif
+                            @if ($footer->footer_social_linkedin)
+                                <li><a href="{{$footer->footer_social_linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+                            @endif
+                            @if ($footer->footer_social_instagram)
+                                <li><a href="{{$footer->footer_social_instagram}}"><i class="fab fa-instagram"></i></a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -50,7 +63,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright__text text-center">
-                        <p>Copyright @ Theme_Pure 2021 All right Reserved</p>
+                        <p>{{$footer->footer_copyright}}</p>
                     </div>
                 </div>
             </div>
