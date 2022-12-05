@@ -28,17 +28,21 @@ Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-//Admin All Routes
-Route::controller(AdminController::class)->group(function() {
-    Route::get('/admin/logout', 'logout')->name('admin.logout');
-    Route::get('/admin/profile', 'getProfile')->name('admin.profile');
-    Route::get('/edit/profile', 'editProfile')->name('edit.profile');
-    Route::post('/store/profile', 'storeProfile')->name('store.profile');
 
-    Route::get('/change/password', 'changePassword')->name('change.password');
-    Route::post('/update/password', 'updatePassword')->name('update.password');
+Route::middleware(['web'])->group(function () {
+    //Admin All Routes
+    Route::controller(AdminController::class)->group(function() {
+        Route::get('/admin/logout', 'logout')->name('admin.logout');
+        Route::get('/admin/profile', 'getProfile')->name('admin.profile');
+        Route::get('/edit/profile', 'editProfile')->name('edit.profile');
+        Route::post('/store/profile', 'storeProfile')->name('store.profile');
 
+        Route::get('/change/password', 'changePassword')->name('change.password');
+        Route::post('/update/password', 'updatePassword')->name('update.password');
+
+    });
 });
+
 
 //Home Slide All Routes
 Route::controller(HomeSliderController::class)->group(function() {
