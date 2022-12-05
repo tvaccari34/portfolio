@@ -20,9 +20,9 @@ use App\Http\Controllers\Home\FooterController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
 
 Route::get('/dashboard', function () {
     return view('admin.index');
@@ -42,9 +42,9 @@ Route::controller(AdminController::class)->group(function() {
 
 //Home Slide All Routes
 Route::controller(HomeSliderController::class)->group(function() {
+    Route::get('/home', 'HomeMain')->name('home');
     Route::get('/home/slide', 'HomeSlider')->name('home.slide');
     Route::post('/update/slider', 'updateSlider')->name('update.slider');
-
 });
 
 //About Page All Routes

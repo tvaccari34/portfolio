@@ -1,3 +1,7 @@
+@php
+    $route = Route::current()->getName();
+@endphp
+
 <!-- header-area -->
 <header>
     <div id="sticky-header" class="menu__area transparent-header">
@@ -13,8 +17,8 @@
                             </div>
                             <div class="navbar__wrap main__menu d-none d-xl-flex">
                                 <ul class="navigation">
-                                    <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                                    <li><a href="{{ route('home.about') }}">About</a></li>
+                                    <li class="{{ $route == 'home' ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
+                                    <li class="{{ $route == 'home.about' ? 'active' : '' }}"><a href="{{ route('home.about') }}">About</a></li>
                                     <li><a href="services-details.html">Services</a></li>
                                     <li class="menu-item-has-children"><a href="#">Portfolio</a>
                                         <ul class="sub-menu">
@@ -22,8 +26,8 @@
                                             <li><a href="portfolio-details.html">Portfolio Details</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="{{ route('home.blog') }}">Our Blog</a></li>
-                                    <li><a href="{{ route('contact.me') }}">contact me</a></li>
+                                    <li class="{{ $route == 'home.blog' ? 'active' : '' }}"><a href="{{ route('home.blog') }}">Our Blog</a></li>
+                                    <li class="{{ $route == 'contact.me' ? 'active' : '' }}"><a href="{{ route('contact.me') }}">contact me</a></li>
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
