@@ -1,6 +1,9 @@
 @extends('frontend.main_master')
 @section('main')
 
+@section('title')
+Portfolio | DevKonnect Website
+@endsection
 <main>
 
     <!-- breadcrumb-area -->

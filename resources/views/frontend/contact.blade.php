@@ -1,6 +1,9 @@
 @extends('frontend.main_master')
 @section('main')
 
+@section('title')
+Contact | DevKonnect Website
+@endsection
 <main>
 
     <!-- breadcrumb-area -->
@@ -45,7 +48,7 @@
         <div class="container">
             <form method="post" action="{{ route('story.contact_message')}}" class="contact__form">
                 @csrf
-                
+
                 <div class="row">
                     <div class="col-md-6">
                         <input name="contact_name" type="text" placeholder="Enter your name*">
