@@ -148,7 +148,7 @@ class BlogController extends Controller
     }
 
     public function HomeBlog(){
-        $allBlogs = Blog::latest()->get();
+        $allBlogs = Blog::latest()->paginate(3);
         $blogCategories = BlogCategory::latest()->get();
         return view('frontend.blog', compact('allBlogs', 'blogCategories'));
     }
