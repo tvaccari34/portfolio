@@ -64,9 +64,8 @@ Blog | DevKonnect Website
                             </div>
                         </div>
                     @endforeach
-
                     <div class="pagination-wrap">
-                        {{ $allBlogs->links() }}
+                        {{ $allBlogs->links('vendor.pagination.custom')}}
                     </div>
                 </div>
                 <div class="col-lg-4">
